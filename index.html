@@ -699,45 +699,93 @@
   .testimonial-wide .testimonial-attr strong { color: rgba(245,241,235,0.85); }
 
   /* WHAT'S INSIDE */
-  .inside { background: var(--paper); }
-  .inside-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    margin-top: 32px;
-    background: var(--border);
+  .offer {
+    background: #e8f2f4;
+    padding: 100px 48px;
   }
-  .inside-item {
-    background: var(--paper);
-    padding: 32px 28px;
+  .offer .section-inner {
+    max-width: 780px;
+  }
+  .offer .section-tag { color: var(--muted); }
+  .offer h2 {
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .offer h2 em { color: var(--accent); }
+  .offer-subtitle {
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 0 auto 56px;
+    text-align: center;
+  }
+  .offer-list {
+    list-style: none;
     display: flex;
-    gap: 20px;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
   }
-  .inside-icon {
-    width: 36px;
-    height: 36px;
+  .offer-item {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    padding: 32px 0;
+    border-bottom: 1px solid rgba(15,31,61,0.08);
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
+  }
+  .offer-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .offer-item:first-child { border-top: 1px solid rgba(15,31,61,0.08); }
+  .offer-icon {
+    width: 52px;
+    height: 52px;
     background: var(--accent);
-    border-radius: 1px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    font-size: 16px;
+    font-size: 22px;
     color: var(--white);
+    box-shadow: 0 4px 16px rgba(245,168,0,0.25);
   }
-  .inside-label {
+  .offer-content { flex: 1; }
+  .offer-label {
     font-family: 'Lora', serif;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 700;
     color: var(--ink);
     margin-bottom: 6px;
   }
-  .inside-desc {
-    font-size: 14px;
+  .offer-desc {
+    font-size: 15px;
     color: var(--muted);
-    font-weight: 300;
-    line-height: 1.55;
+    line-height: 1.65;
+  }
+  .offer-cta {
+    text-align: center;
+    margin-top: 56px;
+  }
+  .offer-cta a {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--white);
+    padding: 16px 40px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .offer-cta a:hover {
+    background: var(--accent-light);
+    transform: translateY(-1px);
   }
 
   /* CTA FINAL */
@@ -870,7 +918,11 @@
     .guide-photo { display: none; }
     .phases,
     .testimonial-grid,
-    .inside-grid { grid-template-columns: 1fr; }
+    .offer { padding: 64px 24px; }
+    .offer-item { gap: 16px; padding: 24px 0; }
+    .offer-icon { width: 44px; height: 44px; font-size: 18px; }
+    .offer-label { font-size: 17px; }
+    .offer-subtitle { font-size: 15px; margin-bottom: 40px; }
     .testimonial-wide { grid-column: 1; }
     footer { flex-direction: column; align-items: flex-start; padding: 36px 24px; }
   }
@@ -1073,40 +1125,58 @@
   </div>
 </section>
 
-<!-- WHAT'S INSIDE -->
-<section class="inside">
+<!-- OFFER -->
+<section class="offer" id="offer">
   <div class="section-inner">
-    <span class="section-tag reveal">What Is Included</span>
-    <h2 class="reveal">Everything you need.<br><em>Nothing you do not.</em></h2>
-    <div class="inside-grid">
-      <div class="inside-item reveal">
-        <div class="inside-icon">▶</div>
-        <div>
-          <div class="inside-label">Video Lessons</div>
-          <p class="inside-desc">Dr. Hochman walks you through each concept. Music and pacing designed to help ideas land emotionally, not just intellectually.</p>
+    <span class="section-tag reveal">What You Get</span>
+    <h2 class="reveal">All-in-one support<br><em>for recovery.</em></h2>
+    <p class="offer-subtitle reveal">Our program gives you powerful tools to break free from addiction and build the life you deserve. Fully self-paced, it can take weeks or months — it's your journey, your timeline.</p>
+    <ul class="offer-list">
+      <li class="offer-item">
+        <div class="offer-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polygon points="10 8 16 11 10 14" fill="currentColor" stroke="none"/></svg></div>
+        <div class="offer-content">
+          <div class="offer-label">Video classes: comprehensive 6-module program</div>
+          <p class="offer-desc">Engage with video lessons designed by Daniel Hochman, MD, covering foundations, emotional pain, addiction, cravings, false pleasure, and health.</p>
         </div>
-      </div>
-      <div class="inside-item reveal">
-        <div class="inside-icon">✎</div>
-        <div>
-          <div class="inside-label">Guided Exercises</div>
-          <p class="inside-desc">After each lesson, you reflect, plan, and practice. This is how the learning sticks. Information alone does not change behavior.</p>
+      </li>
+      <li class="offer-item">
+        <div class="offer-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="offer-content">
+          <div class="offer-label">Weekly live support groups</div>
+          <p class="offer-desc">Expert-led sessions where you can share your journey with the community and get answers to your questions.</p>
         </div>
-      </div>
-      <div class="inside-item reveal">
-        <div class="inside-icon">◎</div>
-        <div>
-          <div class="inside-label">Weekly Group Sessions</div>
-          <p class="inside-desc">Peer-facilitator led groups, included with the program. Join anonymously. Attend if and when it serves you.</p>
+      </li>
+      <li class="offer-item">
+        <div class="offer-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/><path d="M8 3.5C6.5 5 5.5 7.5 8 10" opacity="0.5"/><path d="M16 3.5C17.5 5 18.5 7.5 16 10" opacity="0.5"/></svg></div>
+        <div class="offer-content">
+          <div class="offer-label">Audio mindfulness series</div>
+          <p class="offer-desc">Unique lessons that help you understand your wants at a deeper level, so you can build awareness and control.</p>
         </div>
-      </div>
-      <div class="inside-item reveal">
-        <div class="inside-icon">🔒</div>
-        <div>
-          <div class="inside-label">Completely Private</div>
-          <p class="inside-desc">No one knows you are here. Work through it on your own terms, on your own schedule, without a waiting room or a label.</p>
+      </li>
+      <li class="offer-item">
+        <div class="offer-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+        <div class="offer-content">
+          <div class="offer-label">Reflection exercises</div>
+          <p class="offer-desc">Reflection prompts after each lesson to help you process what you've learned and make real traction.</p>
         </div>
-      </div>
+      </li>
+      <li class="offer-item">
+        <div class="offer-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <div class="offer-content">
+          <div class="offer-label">Music for your journey</div>
+          <p class="offer-desc">Curated tracks that deepen your emotional connection to the lessons and help you explore your feelings more freely.</p>
+        </div>
+      </li>
+      <li class="offer-item">
+        <div class="offer-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+        <div class="offer-content">
+          <div class="offer-label">Certificate</div>
+          <p class="offer-desc">Upon completing the Self Recovery Program, you will receive a certificate of completion.</p>
+        </div>
+      </li>
+    </ul>
+    <div class="offer-cta reveal">
+      <a href="#start">Start Now &mdash; $99/month</a>
     </div>
   </div>
 </section>
@@ -1181,6 +1251,22 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
   reveals.forEach(el => observer.observe(el));
+
+  // Staggered offer items animation
+  const offerItems = document.querySelectorAll('.offer-item');
+  const offerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const items = [...document.querySelectorAll('.offer-item')];
+        const idx = items.indexOf(entry.target);
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, idx * 120);
+        offerObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+  offerItems.forEach(el => offerObserver.observe(el));
 </script>
 
 </body>
