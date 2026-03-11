@@ -275,26 +275,22 @@
   }
   .transform-row {
     display: grid;
-    grid-template-columns: 1fr 48px 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     background: #ffffff;
     border-radius: 12px;
     padding: 28px 36px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-    transition: box-shadow 0.35s ease, transform 0.35s ease, background 0.35s ease;
+    transition: box-shadow 0.35s ease, transform 0.35s ease;
     cursor: default;
+    gap: 24px;
   }
   .transform-row:hover {
     box-shadow: 0 8px 24px rgba(0,0,0,0.1);
     transform: translateY(-3px);
-    background: #ffffff;
-  }
-  .transform-row:hover .transform-arrow {
-    color: var(--accent);
-    transform: translateX(4px);
   }
   .transform-row:hover .transform-gain {
-    color: var(--accent);
+    color: #1a8a3f;
   }
   .transform-pain {
     display: flex;
@@ -302,23 +298,24 @@
     gap: 14px;
     font-size: 17px;
     font-weight: 600;
-    color: var(--ink);
+    color: #6b7280;
+    text-decoration: line-through;
+    text-decoration-color: rgba(192, 57, 43, 0.4);
     transition: color 0.3s ease;
   }
-  .transform-pain::before {
-    content: '';
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #c0392b;
+  .transform-icon {
     flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .transform-arrow {
-    color: var(--muted);
-    font-size: 20px;
-    text-align: center;
-    transition: color 0.3s ease, transform 0.3s ease;
-    line-height: 1;
+  .transform-icon-stop {
+    color: #c0392b;
+  }
+  .transform-icon-check {
+    color: #1a8a3f;
   }
   .transform-gain {
     display: flex;
@@ -328,14 +325,6 @@
     font-weight: 600;
     color: var(--ink);
     transition: color 0.3s ease;
-  }
-  .transform-gain::before {
-    content: '';
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--accent);
-    flex-shrink: 0;
   }
   .transform-cta {
     text-align: center;
@@ -801,8 +790,8 @@
     .hero-guarantee { font-size: 12px; margin-top: 16px; }
     .transform-section { padding: 56px 24px; }
     .transform-heading { font-size: 24px; margin-bottom: 32px; }
-    .transform-row { grid-template-columns: 1fr; gap: 10px; padding: 22px 24px; text-align: left; }
-    .transform-arrow { display: none; }
+    .transform-row { grid-template-columns: 1fr; gap: 14px; padding: 22px 24px; text-align: left; }
+
     .transform-gain { padding-top: 4px; opacity: 0.85; }
     .transform-gain::before { background: var(--accent); }
     .transform-pain { font-size: 15px; }
@@ -856,29 +845,24 @@
     <h2 class="transform-heading">Fix the root causes of addiction for good,<br><em>and don't be frustrated for another day</em></h2>
     <div class="transform-rows">
       <div class="transform-row">
-        <span class="transform-pain">Shamed and blamed for mistakes</span>
-        <span class="transform-arrow">&rarr;</span>
-        <span class="transform-gain">Privately explore your challenges</span>
+        <span class="transform-pain"><span class="transform-icon transform-icon-stop"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2.5"/><line x1="7" y1="7" x2="17" y2="17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span>Shamed and blamed for mistakes</span>
+        <span class="transform-gain"><span class="transform-icon transform-icon-check"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.12"/><path d="M8 12.5l2.5 2.5 5.5-5.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Privately explore your challenges</span>
       </div>
       <div class="transform-row">
-        <span class="transform-pain">Frustrated from failed efforts</span>
-        <span class="transform-arrow">&rarr;</span>
-        <span class="transform-gain">Fix the root causes for good</span>
+        <span class="transform-pain"><span class="transform-icon transform-icon-stop"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2.5"/><line x1="7" y1="7" x2="17" y2="17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span>Frustrated from failed efforts</span>
+        <span class="transform-gain"><span class="transform-icon transform-icon-check"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.12"/><path d="M8 12.5l2.5 2.5 5.5-5.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Fix the root causes for good</span>
       </div>
       <div class="transform-row">
-        <span class="transform-pain">Confused about what to do</span>
-        <span class="transform-arrow">&rarr;</span>
-        <span class="transform-gain">Solve your puzzle with science</span>
+        <span class="transform-pain"><span class="transform-icon transform-icon-stop"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2.5"/><line x1="7" y1="7" x2="17" y2="17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span>Confused about what to do</span>
+        <span class="transform-gain"><span class="transform-icon transform-icon-check"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.12"/><path d="M8 12.5l2.5 2.5 5.5-5.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Solve your puzzle with science</span>
       </div>
       <div class="transform-row">
-        <span class="transform-pain">Skeptical about who to trust</span>
-        <span class="transform-arrow">&rarr;</span>
-        <span class="transform-gain">Trust in a psychiatrist-designed program</span>
+        <span class="transform-pain"><span class="transform-icon transform-icon-stop"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2.5"/><line x1="7" y1="7" x2="17" y2="17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span>Skeptical about who to trust</span>
+        <span class="transform-gain"><span class="transform-icon transform-icon-check"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.12"/><path d="M8 12.5l2.5 2.5 5.5-5.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Trust in a psychiatrist-designed program</span>
       </div>
       <div class="transform-row">
-        <span class="transform-pain">$30,000+ treatment options</span>
-        <span class="transform-arrow">&rarr;</span>
-        <span class="transform-gain">Starting at $99, money back guarantee</span>
+        <span class="transform-pain"><span class="transform-icon transform-icon-stop"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2.5"/><line x1="7" y1="7" x2="17" y2="17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span>$30,000+ treatment options</span>
+        <span class="transform-gain"><span class="transform-icon transform-icon-check"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.12"/><path d="M8 12.5l2.5 2.5 5.5-5.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Starting at $99, money back guarantee</span>
       </div>
     </div>
     <div class="transform-cta">
