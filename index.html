@@ -471,6 +471,32 @@
     display: block;
   }
 
+  /* VIDEO SECTION */
+  .video-section {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .video-section .section-tag { color: var(--paper); }
+  .video-section h2 { color: var(--paper); }
+  .video-section h2 em { color: var(--accent); font-style: italic; }
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 880px;
+    margin: 48px auto 0;
+    padding-bottom: 56.25%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+  }
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   /* HOW IT WORKS */
   .phases {
     display: grid;
@@ -929,6 +955,17 @@
   </div>
 </section>
 
+<!-- VIDEO -->
+<section class="video-section">
+  <div class="section-inner">
+    <span class="section-tag reveal">Hear It From Dr. Hochman</span>
+    <h2 class="reveal">Watch what this program<br><em>is really about.</em></h2>
+    <div class="video-wrapper reveal">
+      <iframe src="https://player.vimeo.com/video/414926110?title=0&byline=0&portrait=0" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
 <!-- HOW IT WORKS -->
 <section>
   <div class="section-inner">
@@ -963,7 +1000,7 @@
     <span class="section-tag reveal">Your Guide</span>
     <div class="guide-inner">
       <div class="guide-photo reveal">
-        <img src="data:image/jpeg;base64,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" alt="Dr. Daniel Hochman" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block;">
+        <img src="image.png" alt="Dr. Daniel Hochman" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block;">
       </div>
       <div class="guide-copy">
         <div class="guide-credentials reveal">
