@@ -653,49 +653,87 @@
     margin: 32px 0;
   }
 
-  /* TESTIMONIALS */
-  .testimonials { background: var(--white); }
-  .testimonial-grid {
+  /* STORIES */
+  .stories { background: var(--white); }
+  .stories .section-inner { max-width: 960px; }
+  .stories-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    margin-top: 32px;
-    background: var(--border);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 48px;
   }
-  .testimonial {
-    background: var(--white);
-    padding: 40px 36px;
+  .story-card {
+    background: var(--paper);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s;
   }
-  .testimonial-text {
+  .story-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(15,31,61,0.12);
+  }
+  .story-header {
+    background: var(--ink);
+    padding: 16px 20px;
+    text-align: center;
+  }
+  .story-header h3 {
     font-family: 'Lora', serif;
-    font-size: 18px;
-    font-style: italic;
-    line-height: 1.65;
-    color: var(--ink);
-    margin-bottom: 28px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--paper);
+    margin: 0;
   }
-  .testimonial-text::before { content: '\201C'; color: var(--ink); }
-  .testimonial-text::after { content: '\201D'; color: var(--ink); }
-  .testimonial-attr {
+  .story-video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 125%;
+    background: #1a1a2e;
+  }
+  .story-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .story-placeholder {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--ink) 0%, #1a2a4a 100%);
+    color: var(--paper);
+    gap: 16px;
+  }
+  .story-play-btn {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 20px rgba(245,168,0,0.3);
+  }
+  .story-card:hover .story-play-btn {
+    transform: scale(1.1);
+    box-shadow: 0 6px 28px rgba(245,168,0,0.45);
+  }
+  .story-play-btn svg {
+    margin-left: 3px;
+  }
+  .story-placeholder span {
     font-size: 13px;
     font-weight: 500;
-    color: var(--muted);
-    letter-spacing: 0.04em;
+    color: rgba(245,241,235,0.6);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
-  .testimonial-attr strong { color: var(--ink); display: block; margin-bottom: 2px; font-size: 14px; }
-
-  .testimonial-wide {
-    background: var(--ink);
-    padding: 48px 36px;
-    grid-column: 1 / -1;
-  }
-  .testimonial-wide .testimonial-text {
-    color: var(--paper);
-    font-size: 22px;
-    max-width: 740px;
-  }
-  .testimonial-wide .testimonial-attr { color: rgba(245,241,235,0.5); }
-  .testimonial-wide .testimonial-attr strong { color: rgba(245,241,235,0.85); }
 
   /* WHAT'S INSIDE */
   .offer {
@@ -933,7 +971,7 @@
     .offer-grid { grid-template-columns: 1fr; gap: 16px; }
     .offer-item { padding: 28px 24px; }
     .offer-subtitle { font-size: 15px; margin-bottom: 40px; }
-    .testimonial-wide { grid-column: 1; }
+    .stories-grid { grid-template-columns: 1fr; max-width: 360px; margin-left: auto; margin-right: auto; }
     footer { flex-direction: column; align-items: flex-start; padding: 36px 24px; }
   }
 </style>
@@ -945,7 +983,7 @@
   <a href="#" class="nav-logo"><img src="data:image/webp;base64,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" alt="Self Recovery" class="nav-logo-img"></a>
   <ul class="nav-links">
     <li><a href="#">Home</a></li>
-    <li><a href="#testimonials">Stories</a></li>
+    <li><a href="#stories">Stories</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#resources">Free Resources</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -1167,6 +1205,46 @@
   </div>
 </section>
 
+<!-- STORIES -->
+<section class="stories" id="stories">
+  <div class="section-inner">
+    <span class="section-tag reveal">Real Stories</span>
+    <h2 class="reveal">End your addiction with Self Recovery:<br><em>the online program that truly works.</em></h2>
+    <div class="stories-grid">
+      <div class="story-card reveal">
+        <div class="story-header"><h3>Sam's Story</h3></div>
+        <div class="story-video">
+          <!-- Replace VIDEO_ID_SAM with actual Vimeo ID -->
+          <div class="story-placeholder" data-name="sam">
+            <div class="story-play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><polygon points="8 5 20 12 8 19"/></svg></div>
+            <span>Watch video</span>
+          </div>
+        </div>
+      </div>
+      <div class="story-card reveal">
+        <div class="story-header"><h3>Sarah's Story</h3></div>
+        <div class="story-video">
+          <!-- Replace VIDEO_ID_SARAH with actual Vimeo ID -->
+          <div class="story-placeholder" data-name="sarah">
+            <div class="story-play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><polygon points="8 5 20 12 8 19"/></svg></div>
+            <span>Watch video</span>
+          </div>
+        </div>
+      </div>
+      <div class="story-card reveal">
+        <div class="story-header"><h3>Clint's Story</h3></div>
+        <div class="story-video">
+          <!-- Replace VIDEO_ID_CLINT with actual Vimeo ID -->
+          <div class="story-placeholder" data-name="clint">
+            <div class="story-play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><polygon points="8 5 20 12 8 19"/></svg></div>
+            <span>Watch video</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FINAL CTA -->
 <section class="cta-final" id="start">
   <div class="section-inner">
@@ -1231,6 +1309,26 @@
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
   offerItems.forEach(el => offerObserver.observe(el));
+
+  // Story video placeholders — click to load Vimeo
+  // Replace these IDs with the real Vimeo video IDs
+  const storyVideos = {
+    sam: 'VIDEO_ID_SAM',
+    sarah: 'VIDEO_ID_SARAH',
+    clint: 'VIDEO_ID_CLINT'
+  };
+  document.querySelectorAll('.story-placeholder').forEach(ph => {
+    ph.addEventListener('click', () => {
+      const name = ph.dataset.name;
+      const id = storyVideos[name];
+      const container = ph.parentElement;
+      if (id && !id.startsWith('VIDEO_ID')) {
+        container.innerHTML = '<iframe src="https://player.vimeo.com/video/' + id + '?autoplay=1&title=0&byline=0&portrait=0" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>';
+      } else {
+        ph.querySelector('span').textContent = 'Video coming soon';
+      }
+    });
+  });
 </script>
 
 </body>
