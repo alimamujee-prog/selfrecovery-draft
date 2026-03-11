@@ -490,24 +490,21 @@
     font-weight: 300;
     font-size: 16px;
   }
-  .insight-pull {
-    margin-top: 80px;
-    font-family: 'Lora', serif;
-    font-size: clamp(22px, 3vw, 32px);
-    font-weight: 600;
-    line-height: 1.35;
-    color: var(--paper);
-    border-left: 2px solid var(--accent);
-    padding-left: 28px;
-    letter-spacing: -0.02em;
+  .insight-video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin-top: 48px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
   }
-  .insight-arrow {
-    color: rgba(245,241,235,0.6);
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    margin-top: 20px;
-    display: block;
+  .insight-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   /* VIDEO SECTION */
@@ -1065,21 +1062,9 @@
         <p>None of them address the relationship between you, pleasure, and distress. Until that changes, every other approach is just a transfer. A different coping strategy. The same loop.</p>
         <p>Self Recovery was built to close that gap. Permanently.</p>
       </div>
-      <div class="reveal">
-        <p class="insight-pull">"Your brain is not broken. It learned something. And what is learned can change. That is the entire foundation of this program."</p>
-        <span class="insight-arrow">↳ Dr. Daniel Hochman, Psychiatrist</span>
+      <div class="insight-video reveal">
+        <iframe src="https://player.vimeo.com/video/414926110?title=0&byline=0&portrait=0" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- VIDEO -->
-<section class="video-section">
-  <div class="section-inner">
-    <span class="section-tag reveal">Hear It From Dr. Hochman</span>
-    <h2 class="reveal">Watch what this program<br><em>is really about.</em></h2>
-    <div class="video-wrapper reveal">
-      <iframe src="https://player.vimeo.com/video/414926110?title=0&byline=0&portrait=0" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
 </section>
